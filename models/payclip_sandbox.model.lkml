@@ -1,4 +1,5 @@
 connection: "payclip_refinery"
+include: "/views/*.view.lkml"
 
 datagroup: payclip_sandbox_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -6,3 +7,8 @@ datagroup: payclip_sandbox_default_datagroup {
 }
 
 persist_with: payclip_sandbox_default_datagroup
+
+
+explore: commissionist {
+  view_label: "COMMISSIONIST DATA"
+}
