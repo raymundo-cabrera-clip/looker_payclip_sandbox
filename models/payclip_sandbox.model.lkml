@@ -24,6 +24,12 @@ explore: commissionist {
     relationship: many_to_one
     type: left_outer
   }
+
+  join: address_commissionist {
+    sql_on: ${address_commissionist.commissionist_id} = ${commissionist.commissionist_id} ;;
+    relationship: many_to_one
+    type: left_outer
+  }
 }
 
 explore: address_commissionist {
