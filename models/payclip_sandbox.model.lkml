@@ -11,6 +11,18 @@ persist_with: payclip_sandbox_default_datagroup
 
 explore: commissionist {
   view_label: "COMMISSIONIST DATA"
+
+
+  join: invoicing_information {
+    sql_on: ${commissionist.invoicing_information_id} = ${invoicing_information.invoicing_information_id} ;;
+    relationship: many_to_one
+    type: left_outer
+  }
+  join: hunters {
+    sql_on: ${hunters.hunter_id} = ${commissionist.hunter_id} ;;
+    relationship: many_to_one
+    type: left_outer
+  }
 }
 
 explore: address_commissionist {
