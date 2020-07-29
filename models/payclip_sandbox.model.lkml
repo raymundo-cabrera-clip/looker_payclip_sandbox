@@ -55,6 +55,12 @@ explore: order_batch {
 
 explore: orders {
   view_label: "orders"
+
+  join: order_batch {
+    sql_on: ${order_batch.order_batch_id} = ${orders.order_batch_id} ;;
+    relationship: many_to_one
+    type: inner
+  }
 }
 
 explore: payment {
@@ -63,8 +69,26 @@ explore: payment {
 
 explore: sales_coupon {
   view_label: "sales_coupon"
+
+  join: commissionist {
+    sql_on: ${commissionist.commissionist_id} = ${sales_coupon.code} ;;
+    relationship: many_to_one
+    type: inner
+  }
 }
 
 explore: user_sales_coupon {
   view_label: "user_sales_coupon"
+
+  join: sales_coupon {
+    sql_on: ${sales_coupon.sales_coupon_id} = ${user_sales_coupon.sales_coupon_id} ;;
+    relationship: many_to_one
+    type: inner
+  }
+
+  join: orders {
+    sql_on: ${orders.order_batch_id} = ${user_sales_coupon.order_id} ;;
+    relationship: many_to_one
+    type: inner
+  }
 }
