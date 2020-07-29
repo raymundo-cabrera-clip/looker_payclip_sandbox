@@ -18,6 +18,7 @@ explore: commissionist {
     relationship: many_to_one
     type: left_outer
   }
+
   join: hunters {
     sql_on: ${hunters.hunter_id} = ${commissionist.hunter_id} ;;
     relationship: many_to_one
