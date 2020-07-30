@@ -25,8 +25,14 @@ explore: commissionist {
     type: left_outer
   }
 
+
   join: address_commissionist {
     sql_on: ${address_commissionist.commissionist_id} = ${commissionist.commissionist_id} ;;
+    relationship: many_to_one
+    type: left_outer
+  }
+  join: addresses {
+    sql_on: ${addresses.address_id} = ${address_commissionist.address_id} ;;
     relationship: many_to_one
     type: left_outer
   }
