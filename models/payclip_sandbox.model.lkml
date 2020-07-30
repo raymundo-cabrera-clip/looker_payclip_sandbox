@@ -12,3 +12,7 @@ persist_with: payclip_sandbox_default_datagroup
 explore: commissionist {
   view_label: "COMMISSIONIST DATA"
 }
+
+explore: hunters {
+  view_label: "HUNTERS DATA"
+}
