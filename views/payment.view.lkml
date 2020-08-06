@@ -420,6 +420,7 @@ view: payment {
 
   measure: sum {
     type: number
+    label: "tpv"
     sql: round(sum(${amount}) ,2) ;;
   }
 
