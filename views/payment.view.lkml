@@ -417,4 +417,15 @@ view: payment {
     type: count
     drill_fields: [reference_payment_id, dms_filename, reader_type_code_name]
   }
+
+  measure: sum {
+    type: sum
+    drill_fields: [amount]
+  }
+
+  measure: location {
+    type: string
+    sql:  ${TABLE}."LATITUDE" ||','||  ${TABLE}."LONGITUDE"  ;;
+  }
+
 }
