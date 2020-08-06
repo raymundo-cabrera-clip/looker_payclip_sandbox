@@ -419,8 +419,8 @@ view: payment {
   }
 
   measure: sum {
-    type: sum
-    drill_fields: [amount]
+    type: number
+    sql: sum(${amount}) ;;
   }
 
   measure: location {
