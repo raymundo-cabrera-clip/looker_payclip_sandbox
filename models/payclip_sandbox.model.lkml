@@ -78,6 +78,12 @@ explore: orders {
 
 explore: payment {
   view_label: "payment"
+
+  join: merchants {
+    sql_on: ${merchants.id} = ${payment.merchant_id} ;;
+    relationship: many_to_one
+    type: inner
+  }
 }
 
 explore: sales_coupon {
@@ -104,4 +110,9 @@ explore: user_sales_coupon {
     relationship: many_to_one
     type: inner
   }
+}
+
+explore: merchants {
+  view_label: "merchants"
+
 }
