@@ -420,7 +420,7 @@ view: payment {
 
   measure: sum {
     type: number
-    sql: sum(${amount}) ;;
+    sql: round(sum(${amount}) ,2) ;;
   }
 
   measure: location {
