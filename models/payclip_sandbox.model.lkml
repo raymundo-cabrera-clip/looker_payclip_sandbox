@@ -116,3 +116,8 @@ explore: merchants {
   view_label: "merchants"
 
 }
+
+explore: industries {
+  view_label: "industries"
+
+}
