@@ -115,6 +115,12 @@ explore: user_sales_coupon {
 explore: merchants {
   view_label: "merchants"
 
+  join: industries {
+    sql_on: ${industries.id} = ${merchants.industry_id} ;;
+    relationship: many_to_one
+    type: inner
+  }
+
 }
 
 explore: industries {
