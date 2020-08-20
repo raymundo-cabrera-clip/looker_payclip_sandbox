@@ -91,6 +91,12 @@ explore: payment {
     type: inner
   }
 
+  join: ksn_activated {
+    sql_on: ${ksn_activated.merchant_id} = ${payment.merchant_id} ;;
+    relationship: many_to_one
+    type: inner
+  }
+
 }
 
 explore: sales_coupon {
@@ -129,4 +135,8 @@ explore: merchants {
 explore: industries {
   view_label: "industries"
 
+}
+
+explore: ksn_activated {
+  view_label: "ksn_activated"
 }
