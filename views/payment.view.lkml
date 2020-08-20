@@ -415,6 +415,7 @@ view: payment {
 
   measure: count {
     type: count
+    label: "txn"
     drill_fields: [reference_payment_id, dms_filename, reader_type_code_name]
   }
 
