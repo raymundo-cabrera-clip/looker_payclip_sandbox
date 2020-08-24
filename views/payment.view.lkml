@@ -430,7 +430,7 @@ view: payment {
     sql:  ${TABLE}."LATITUDE" ||','||  ${TABLE}."LONGITUDE"  ;;
   }
 
-  measure: month_name {
+  dimension: month_name {
     type: string
     label: "month_name"
     sql: TO_CHAR(  ${TABLE}."CREATED_AT" , 'Month')  ;;
