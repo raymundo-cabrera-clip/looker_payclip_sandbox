@@ -433,7 +433,7 @@ view: payment {
   measure: month_name {
     type: string
     label: "month_name"
-    sql: to_char(date_trunc(month, convert_timezone('UTC','America/Mexico_City', ${TABLE}."CREATED_AT")), 'Month')  ;;
+    sql: to_char(date_trunc(month, ${TABLE}."CREATED_AT") , 'Month')  ;;
   }
 
 }
