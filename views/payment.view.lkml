@@ -421,8 +421,13 @@ view: payment {
 
   measure: count {
     type: count
-    label: "txn"
-    drill_fields: [reference_payment_id, dms_filename, reader_type_code_name]
+    drill_fields: [reference_payment_id, dms_filename, reader_type_code_name, transaction_id]
+  }
+
+  measure: count_txn  {
+    type: number
+    group_label: "TXN"
+    sql: count(${transaction_id}) ;;
   }
 
   measure: sum {
