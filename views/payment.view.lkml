@@ -433,7 +433,7 @@ view: payment {
   measure: month_name {
     type: string
     label: "month_name"
-    sql: to_char(date_trunc(month, ${TABLE}."CREATED_AT") , 'Month')  ;;
+    sql: TO_CHAR(  ${TABLE}."CREATED_AT" , 'Month')  ;;
   }
 
 }
