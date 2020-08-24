@@ -413,6 +413,12 @@ view: payment {
     sql: ${TABLE}."UUID" ;;
   }
 
+  dimension: location_payment {
+    type: location
+    sql_latitude: ${latitude};;
+    sql_longitude: ${longitude} ;;
+  }
+
   measure: count {
     type: count
     label: "txn"
@@ -423,11 +429,6 @@ view: payment {
     type: number
     label: "tpv"
     sql: round(sum(${amount}) ,2) ;;
-  }
-
-  measure: location {
-    type: string
-    sql:  ${TABLE}."LATITUDE" ||','||  ${TABLE}."LONGITUDE"  ;;
   }
 
   dimension: month_name {
