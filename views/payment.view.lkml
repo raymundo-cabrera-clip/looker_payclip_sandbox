@@ -430,4 +430,10 @@ view: payment {
     sql:  ${TABLE}."LATITUDE" ||','||  ${TABLE}."LONGITUDE"  ;;
   }
 
+  measure: month_name {
+    type: string
+    label: "month_name"
+    sql: to_char(date_trunc(month, convert_timesone('UTC','America/Mexico_City', ${TABLE}."CREATED_AT")), 'Month')  ;;
+  }
+
 }
