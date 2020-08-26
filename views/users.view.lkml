@@ -245,6 +245,16 @@ view: users {
     sql: ${TABLE}."ROLE" ;;
   }
 
+  dimension: roles {
+    type: string
+    sql: case
+            when (${role} = 'ADMIN' or ${role}='admin') THEN 'ADMIN'
+            when (${role} = 'CASHIER' or ${role}='cashier') THEN 'CASHIER'
+            when (${role} = 'FINANCE' or ${role}='finance') THEN 'FINANCE'
+            when (${role} = 'MANAGER' or ${role}='manager') THEN 'MANAGER'
+            end ;;
+  }
+
   dimension: second_last_name {
     type: string
     sql: ${TABLE}."SECOND_LAST_NAME" ;;
