@@ -437,9 +437,9 @@ view: payment {
   }
 
   measure: brand_amex_tpv {
-    type: number
+    type: string
     label: "BRAND AMEX TPV"
-    sql: sum(case when ${brand} = 'AX' THEN ${amount} end ) / sum(${amount}) ;;
+    sql: round(sum(case when ${brand} = 'AX' THEN ${amount} end ) / sum(${amount}) *100, 2) ||' %' ;;
   }
 
   dimension: month_name {
