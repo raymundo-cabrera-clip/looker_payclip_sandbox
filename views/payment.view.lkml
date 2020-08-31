@@ -449,7 +449,6 @@ view: payment {
   }
 
 
-
   dimension: month_name {
     type: string
     label: "month_name"
