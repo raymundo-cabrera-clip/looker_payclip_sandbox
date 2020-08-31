@@ -204,4 +204,11 @@ explore: bins {
 
 explore: transaction_profile {
   label: "transaction_profile"
+
+  join: bins {
+    sql_on: ${bins.bin_id} = ${transaction_profile.bin_id} ;;
+    relationship: one_to_one
+    type:  inner
+  }
+
 }
