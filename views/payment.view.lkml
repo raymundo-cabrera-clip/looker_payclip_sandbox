@@ -448,6 +448,8 @@ view: payment {
     sql: round( coalesce( SUM(CASE WHEN ${brand} <> 'AX' THEN ${amount} END), 0) / SUM(${amount}) , 2)||' %' ;;
   }
 
+
+
   dimension: month_name {
     type: string
     label: "month_name"
