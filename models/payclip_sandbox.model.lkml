@@ -169,6 +169,8 @@ explore: top_accounts {
     type: inner
   }
 
+
+
   join: bins {
     sql_on: ${bins.bin_id} = ${transaction_profile.bin_id} ;;
     relationship: one_to_one
