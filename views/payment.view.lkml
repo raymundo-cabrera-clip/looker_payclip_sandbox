@@ -444,19 +444,19 @@ view: payment {
   measure: brand_amex_tpv {
     type: string
     label: "BRAND AMEX TPV"
-    sql: round(sum(case when ${brand} = 'AX' THEN ${amount} end ) / sum(${amount}) *100, 2) ||' %' ;;
+    sql: round( (sum(case when ${brand} = 'AX' THEN ${amount} end ) / ${sum} ) *100 , 2) ||' %' ;;
   }
 
   measure: brand_vi_mc_tpv {
     type: string
     label: "BARND VI MC TPV"
-    sql: round( coalesce( SUM(CASE WHEN ${brand} <> 'AX' THEN ${amount} END), 0) / SUM(${amount}) , 2)||' %' ;;
+    sql: round( (coalesce( SUM(CASE WHEN ${brand} <> 'AX' THEN ${amount} END), 0) / ${sum} ) *100 , 2)||' %' ;;
   }
 
   measure: debid_tpv {
     type: string
     label: "debit tpv"
-    sql: sum ( case when ${card_type} ='DEBIT' then ${amount}  end )/ ${sum} ||' %' ;;
+    sql: round( (sum ( case when ${card_type} ='DEBIT' then ${amount}  end )/ ${sum} ) *100, 2) ||' %' ;;
   }
 
   dimension: month_name {
