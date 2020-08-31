@@ -419,6 +419,11 @@ view: payment {
     sql_longitude: ${longitude} ;;
   }
 
+  dimension: card_type {
+    type: string
+    sql: ${transaction_profile.card_type} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [reference_payment_id, dms_filename, reader_type_code_name, transaction_id]
