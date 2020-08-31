@@ -97,6 +97,18 @@ explore: payment {
     type: inner
   }
 
+  join: transaction_profile {
+    sql_on: ${payment.transaction_id} = ${transaction_profile.transaction_id} ;;
+    relationship: one_to_many
+    type: inner
+  }
+
+  join: bins {
+    sql_on: ${bins.bin_id} = ${transaction_profile.bin_id} ;;
+    relationship: one_to_one
+    type:  inner
+  }
+
 }
 
 explore: sales_coupon {
@@ -168,8 +180,6 @@ explore: top_accounts {
     relationship: one_to_many
     type: inner
   }
-
-
 
   join: bins {
     sql_on: ${bins.bin_id} = ${transaction_profile.bin_id} ;;
