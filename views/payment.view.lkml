@@ -456,7 +456,7 @@ view: payment {
   measure: debid_tpv {
     type: string
     label: "debit tpv"
-    sql: ( case when ${card_type} ='DEBIT' then sum(${sum}) end )/sum(${sum}) ||' %' ;;
+    sql: sum ( case when ${card_type} ='DEBIT' then ${amount}  end )/ ${sum} ||' %' ;;
   }
 
   dimension: month_name {
