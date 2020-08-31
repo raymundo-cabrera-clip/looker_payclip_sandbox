@@ -169,6 +169,26 @@ view: bins {
     sql: ${TABLE}."WEBSITE" ;;
   }
 
+  dimension: card_type {
+    type: string
+    sql: case
+          when ${type} is null then 'DEBIT'
+          when ${type} ='D' then 'DEBIT'
+          when ${type} ='Debit' then 'DEBIT'
+          when ${type} ='DEBIT' then 'DEBIT'
+          when ${type} ='P' then 'CREDIT'
+          when ${type} ='C' then 'CREDIT'
+          when ${type} ='Credit' then 'CREDIT'
+          when ${type} ='DEBIT or CREDIT' then 'CREDIT'
+          when ${type} ='GNS SANT' then 'AMEX'
+          when ${type} ='CHARGE CARD' THEN 'AMEX'
+          when ${type} ='CPC' then 'AMEX'
+          when ${type} ='GNS CREDO' then 'AMEX'
+          when ${type} ='CORPORATE' then 'AMEX'
+          when ${type} ='CHARGE' then 'AMEX'
+          end;;
+  }
+
   measure: count {
     type: count
     drill_fields: [bin_id, dms_filename, transaction_profile.count]
