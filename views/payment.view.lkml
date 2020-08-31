@@ -445,7 +445,7 @@ view: payment {
   measure: brand_vi_mc_tpv {
     type: string
     label: "BARND VI MC TPV"
-    sql: round( coalesce( SUM(CASE WHEN $[${brand}] <> 'AX' THEN ${amount} END), 0) / SUM(${amount}) , 2)||' %' ;;
+    sql: round( coalesce( SUM(CASE WHEN ${brand} <> 'AX' THEN ${amount} END), 0) / SUM(${amount}) , 2)||' %' ;;
   }
 
   dimension: month_name {
