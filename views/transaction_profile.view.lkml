@@ -108,7 +108,7 @@ view: transaction_profile {
 
   dimension: test_test {
     type: string
-    sql: {bins.card_type} ;;
+    sql: ${bins."CARD_TYPE"} ;;
   }
 
   measure: count {
