@@ -106,11 +106,6 @@ view: transaction_profile {
     sql: ${TABLE}."WALLET_USER_ID" ;;
   }
 
-  dimension: test_test {
-    type: string
-    sql: ${bins."CARD_TYPE"} ;;
-  }
-
   measure: count {
     type: count
     drill_fields: [dms_filename, bins.bin_id, bins.dms_filename]
