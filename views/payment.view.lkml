@@ -453,6 +453,11 @@ view: payment {
     sql: round( coalesce( SUM(CASE WHEN ${brand} <> 'AX' THEN ${amount} END), 0) / SUM(${amount}) , 2)||' %' ;;
   }
 
+  measure: debid_tpv {
+    type: string
+    label: "debit tpv"
+    sql: ( case when ${card_type} ='DEBIT' then sum(${sum}) end )/sum(${sum}) ||' %' ;;
+  }
 
   dimension: month_name {
     type: string
